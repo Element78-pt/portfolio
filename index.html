@@ -6,9 +6,78 @@
 <style>
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: #f5f5f5;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: linear-gradient(135deg, #dcdcdc, #ffffff);
   color: #333;
+}
+
+/* ナビ */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 15px;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+}
+
+/* ヘッダー */
+header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 72px;
+  letter-spacing: 10px;
+}
+
+/* セクション */
+.section {
+  padding: 120px 10%;
+}
+
+/* ガラスカード */
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* 作品 */
+.works {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* タイトル */
+h2 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+</style>
 }
 header {
   height: 100vh;
