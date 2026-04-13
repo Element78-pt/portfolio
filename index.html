@@ -2,9 +2,11 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>pt Portfolio</title>
-  <h1>pt</h1>
-<p style="opacity:0.5;">Silver & Transparent World</p>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
@@ -23,6 +25,12 @@ nav {
   padding: 15px;
   background: rgba(255,255,255,0.4);
   backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: #555;
 }
 
 /* ヘッダー */
@@ -39,12 +47,30 @@ h1 {
   letter-spacing: 10px;
 }
 
+.tagline {
+  opacity: 0.5;
+  margin-top: 10px;
+}
+
 /* セクション */
 .section {
   padding: 120px 10%;
 }
 
-/* ガラスカード */
+/* About */
+.about {
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+/* 作品 */
+.works {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+/* カード */
 .card {
   border-radius: 20px;
   overflow: hidden;
@@ -57,13 +83,6 @@ h1 {
   transform: translateY(-10px);
 }
 
-/* 作品 */
-.works {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-}
-
 .card img {
   width: 100%;
   display: block;
@@ -74,51 +93,66 @@ h1 {
   transform: scale(1.1);
 }
 
-/* タイトル */
-h2 {
-  font-weight: 500;
-  margin-bottom: 20px;
+/* Contact */
+.contact a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #666;
 }
-</style>
-}
-header {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(#e0e0e0, #ffffff);
-}
-h1 {
-  font-size: 48px;
-  letter-spacing: 5px;
-}
-.section {
-  padding: 60px;
-}
-</div>
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 12px;
+  opacity: 0.5;
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+  <a href="#about">About</a>
+  <a href="#works">Works</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <header>
   <h1>pt</h1>
+  <p class="tagline">Silver & Transparent World</p>
 </header>
 
-<div class="section">
+<section id="about" class="section">
   <h2>About</h2>
-  <p>イラスト初心者。</p>
-</div>
+  <p class="about">
+    透明感のある銀色の世界観を描くイラストレーター。<br>
+    現在、イラストのお仕事を目指して活動中。<br>
+    使用ツール：CLIP STUDIO / ibisPaint
+  </p>
+</section>
 
-<div class="section">
+<section id="works" class="section">
   <h2>Works</h2>
   <div class="works">
-    <img src="img1.jpg">
-    <img src="img2.jpg">
-    <img src="img3.jpg">
+    <div class="card"><img src="img1.jpg"></div>
+    <div class="card"><img src="img2.jpg"></div>
+    <div class="card"><img src="img3.jpg"></div>
   </div>
-</div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p>ご依頼受付中です。</p>
+    <a href="#">Twitter</a><br>
+    <a href="#">pixiv</a>
+  </div>
+</section>
+
+<footer>
+  © pt Portfolio
+</footer>
 
 </body>
 </html>
